@@ -124,4 +124,34 @@ footer {
 .blog-card h2 {
   cursor: pointer;
 }
+.post-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.post-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.post-meta {
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.post-content p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #ff5722;
+  font-weight: bold;
+}
 
