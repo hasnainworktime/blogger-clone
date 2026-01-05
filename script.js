@@ -141,4 +141,30 @@ if (posts[postKey]) {
     `By <strong>${posts[postKey].author}</strong> | ${posts[postKey].category}`;
   document.querySelector(".post-content").innerHTML = posts[postKey].content;
 }
+function savePost() {
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const category = document.getElementById("category").value;
+  const content = document.getElementById("content").value;
+
+  if (!title || !author || !content) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  const post = {
+    id: Date.now(),
+    title,
+    author,
+    category,
+    content
+  };
+
+  let posts = JSON.parse(localStorage.getItem("posts")) || [];
+  posts.push(post);
+  localStorage.setItem("posts", JSON.stringify(posts));
+
+  alert("Post Published!");
+  window.location.href = "index.html";
+}
 
