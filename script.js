@@ -88,4 +88,13 @@ function loadComments() {
     list.innerHTML += `<li>${c}</li>`;
   });
 }
+document.getElementById("search")?.addEventListener("input", function () {
+  const value = this.value.toLowerCase();
+  const cards = document.querySelectorAll(".blog-card");
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(value) ? "block" : "none";
+  });
+});
 
