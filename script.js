@@ -167,4 +167,20 @@ function savePost() {
   alert("Post Published!");
   window.location.href = "index.html";
 }
+const postContainer = document.getElementById("posts");
+
+if (postContainer) {
+  const posts = JSON.parse(localStorage.getItem("posts")) || [];
+
+  posts.reverse().forEach(post => {
+    const div = document.createElement("div");
+    div.className = "post-card";
+    div.innerHTML = `
+      <h2>${post.title}</h2>
+      <p>${post.content.substring(0, 100)}...</p>
+      <small>By ${post.author} | ${post.category}</small>
+    `;
+    postContainer.appendChild(div);
+  });
+}
 
