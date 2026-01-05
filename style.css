@@ -154,4 +154,33 @@ footer {
   color: #ff5722;
   font-weight: bold;
 }
+.form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-container textarea {
+  height: 150px;
+}
+
+.form-container button {
+  background: #ff5722;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
 
