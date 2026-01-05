@@ -117,4 +117,11 @@ footer {
   color: white;
   margin-top: 40px;
 }
+.categories a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+.blog-card h2 {
+  cursor: pointer;
+}
 
