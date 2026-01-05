@@ -77,6 +77,14 @@ function addComment() {
   document.getElementById("commentInput").value = "";
   loadComments();
 }
+div.innerHTML = `
+  <h2>${post.title}</h2>
+  <p>${post.content.substring(0, 100)}...</p>
+  <small>By ${post.author} | ${post.category}</small>
+  <br><br>
+  <button onclick="editPost(${post.id})">Edit</button>
+  <button onclick="deletePost(${post.id})">Delete</button>
+`;
 
 function loadComments() {
   const list = document.getElementById("commentList");
@@ -182,5 +190,15 @@ if (postContainer) {
     `;
     postContainer.appendChild(div);
   });
+}
+function editPost(id) {
+  window.location.href = `edit.html?id=${id}`;
+}
+
+function deletePost(id) {
+  let posts = JSON.parse(localStorage.getItem("posts")) || [];
+  posts = posts.filter(post => post.id !== id);
+  localStorage.setItem("posts", JSON.stringify(posts));
+  location.reload();
 }
 
