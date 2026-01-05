@@ -51,4 +51,41 @@ function deletePost(index) {
 }
 
 loadPosts();
+const params = new URLSearchParams(window.location.search);
+const postIndex = params.get("index");
+
+if (postIndex !== null) {
+  const posts = JSON.parse(localStorage.getItem("posts")) || [];
+  const post = posts[postIndex];
+
+  document.getElementById("post-title").innerText = post.title;
+  document.getElementById("post-meta").innerText =
+    `By ${post.author} | ${post.category}`;
+  document.getElementById("post-content").innerText = post.content;
+
+  loadComments();
+}
+
+function addComment() {
+  const comment = document.getElementById("commentInput").value;
+  if (!comment) return;
+
+  let comments = JSON.parse(localStorage.getItem("comments_" + postIndex)) || [];
+  comments.push(comment);
+  localStorage.setItem("comments_" + postIndex, JSON.stringify(comments));
+
+  document.getElementById("commentInput").value = "";
+  loadComments();
+}
+
+function loadComments() {
+  const list = document.getElementById("commentList");
+  if (!list) return;
+
+  let comments = JSON.parse(localStorage.getItem("comments_" + postIndex)) || [];
+  list.innerHTML = "";
+  comments.forEach(c => {
+    list.innerHTML += `<li>${c}</li>`;
+  });
+}
 
