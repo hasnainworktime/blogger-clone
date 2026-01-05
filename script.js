@@ -201,4 +201,35 @@ function deletePost(id) {
   localStorage.setItem("posts", JSON.stringify(posts));
   location.reload();
 }
+const params = new URLSearchParams(window.location.search);
+const editId = params.get("id");
+
+if (editId) {
+  let posts = JSON.parse(localStorage.getItem("posts")) || [];
+  const post = posts.find(p => p.id == editId);
+
+  if (post) {
+    document.getElementById("title").value = post.title;
+    document.getElementById("author").value = post.author;
+    document.getElementById("category").value = post.category;
+    document.getElementById("content").value = post.content;
+  }
+}
+function updatePost() {
+  let posts = JSON.parse(localStorage.getItem("posts")) || [];
+
+  const updatedPost = {
+    id: Number(editId),
+    title: document.getElementById("title").value,
+    author: document.getElementById("author").value,
+    category: document.getElementById("category").value,
+    content: document.getElementById("content").value
+  };
+
+  posts = posts.map(p => p.id == editId ? updatedPost : p);
+  localStorage.setItem("posts", JSON.stringify(posts));
+
+  alert("Post Updated!");
+  window.location.href = "index.html";
+}
 
