@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Post</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>Blogger</h1>
+  <a href="index.html">← Back to Home</a>
+</header>
+
+<div class="form-container">
+  <h2>Create New Post</h2>
+
+  <input type="text" id="title" placeholder="Post Title">
+  <input type="text" id="author" placeholder="Author Name">
+
+  <select id="category">
+    <option value="Technology">Technology</option>
+    <option value="Business">Business</option>
+    <option value="Lifestyle">Lifestyle</option>
+    <option value="Travel">Travel</option>
+  </select>
+
+  <textarea id="content" placeholder="Write your post here..."></textarea>
+
+  <button onclick="savePost()">Publish Post</button>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
