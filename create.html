@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Post</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Blogger</h1>
+    <a href="index.html" style="color:white;">Home</a>
+  </header>
+
+  <main class="blog-list">
+    <h2>Create New Blog Post</h2>
+
+    <input type="text" id="title" placeholder="Post Title" style="width:100%;padding:10px;"><br><br>
+
+    <select id="category" style="width:100%;padding:10px;">
+      <option>Technology</option>
+      <option>Lifestyle</option>
+      <option>Business</option>
+      <option>Travel</option>
+    </select><br><br>
+
+    <textarea id="content" rows="6" placeholder="Write your blog content here..."
+      style="width:100%;padding:10px;"></textarea><br><br>
+
+    <button onclick="savePost()">Publish</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
