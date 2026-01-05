@@ -97,4 +97,48 @@ document.getElementById("search")?.addEventListener("input", function () {
     card.style.display = text.includes(value) ? "block" : "none";
   });
 });
+const posts = {
+  ai: {
+    title: "How AI is Changing Web Development",
+    author: "Muhammad Hasnain",
+    category: "Technology",
+    content: `
+      <p>Artificial Intelligence is transforming how websites are built.</p>
+      <p>AI tools help developers write better code faster.</p>
+      <p>The future of web development is smart and automated.</p>
+    `
+  },
+
+  freelancing: {
+    title: "10 Tips for Freelancers",
+    author: "Muhammad Hasnain",
+    category: "Business",
+    content: `
+      <p>Freelancing gives freedom and flexibility.</p>
+      <p>Build strong communication skills.</p>
+      <p>Always deliver quality work on time.</p>
+    `
+  },
+
+  travel: {
+    title: "My Travel Journey to Northern Areas",
+    author: "Muhammad Hasnain",
+    category: "Travel",
+    content: `
+      <p>The northern areas of Pakistan are breathtaking.</p>
+      <p>Mountains, valleys, and fresh air refresh the soul.</p>
+      <p>This journey was unforgettable.</p>
+    `
+  }
+};
+
+const params = new URLSearchParams(window.location.search);
+const postKey = params.get("post");
+
+if (posts[postKey]) {
+  document.querySelector(".post-title").innerText = posts[postKey].title;
+  document.querySelector(".post-meta").innerHTML =
+    `By <strong>${posts[postKey].author}</strong> | ${posts[postKey].category}`;
+  document.querySelector(".post-content").innerHTML = posts[postKey].content;
+}
 
