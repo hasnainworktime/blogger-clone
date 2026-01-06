@@ -183,4 +183,9 @@ footer {
   cursor: pointer;
   width: 100%;
 }
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
 
