@@ -1,3 +1,4 @@
+let allPosts = JSON.parse(localStorage.getItem("posts")) || [];
 function savePost() {
   const title = document.getElementById("title").value;
   const category = document.getElementById("category").value;
