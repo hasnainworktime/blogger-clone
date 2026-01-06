@@ -34,7 +34,7 @@ It is fully compatible with **GitHub Pages** (no backend required).
 ---
 
 ## 🚀 Live Demo
-🔗 https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY_NAME/
+🔗 https://YOUR_GITHUB_teat.github.io/YOUR_REPOSITORY_blogger-clone/
 
 ---
 
