@@ -65,3 +65,42 @@ It is fully compatible with **GitHub Pages** (no backend required).
 
 ## 📂 Project Structure
 
+---
+
+## 🧠 How It Works
+
+- Blog posts are stored in the browser using **LocalStorage**
+- Each post has a unique ID
+- Posts are dynamically loaded using JavaScript
+- Comments are saved per session using LocalStorage
+- No backend or database is required
+
+---
+
+## 📸 Screenshots
+*(Add screenshots here later for better presentation)*
+
+---
+
+## 🎯 Purpose of This Project
+
+This project was created as part of a **CWI (Code With Interns) task** to practice:
+- Frontend development
+- DOM manipulation
+- LocalStorage usage
+- GitHub & GitHub Pages deployment
+
+---
+
+## 👨‍💻 Author
+
+**Muhammad Hasnain**  
+Frontend Learner | Web Development  
+Pakistan 🇵🇰
+
+---
+
+## 📄 License
+
+This project is for **learning and educational purposes**.
+
