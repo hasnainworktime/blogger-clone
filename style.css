@@ -188,4 +188,15 @@ footer {
   margin: auto;
   padding: 20px;
 }
+button {
+  background: #ff5722;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background: #e64a19;
+}
 
