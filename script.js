@@ -285,4 +285,35 @@ function loadComments() {
 }
 
 loadComments();
+function renderPosts(posts) {
+  const container = document.getElementById("posts");
+  container.innerHTML = "";
+
+  posts.forEach(post => {
+    const div = document.createElement("div");
+    div.className = "post-card";
+    div.innerHTML = `
+      <h2><a href="post.html?id=${post.id}">${post.title}</a></h2>
+      <p>${post.content.substring(0, 100)}...</p>
+      <small>${post.category}</small>
+    `;
+    container.appendChild(div);
+  });
+}
+renderPosts(allPosts);
+document.getElementById("searchInput").addEventListener("input", e => {
+  const value = e.target.value.toLowerCase();
+  const filtered = allPosts.filter(p =>
+    p.title.toLowerCase().includes(value)
+  );
+  renderPosts(filtered);
+});
+function filterCategory(cat) {
+  if (cat === "All") {
+    renderPosts(allPosts);
+  } else {
+    const filtered = allPosts.filter(p => p.category === cat);
+    renderPosts(filtered);
+  }
+}
 
