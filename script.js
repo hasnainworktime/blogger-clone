@@ -257,4 +257,31 @@ function addComment() {
 }
 
 loadComments();
+const commentBtn = document.getElementById("addComment");
+const commentInput = document.getElementById("commentInput");
+const commentList = document.getElementById("commentList");
+
+commentBtn.addEventListener("click", () => {
+  const comment = commentInput.value.trim();
+  if (comment === "") return;
+
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+  comments.push(comment);
+  localStorage.setItem("comments", JSON.stringify(comments));
+
+  commentInput.value = "";
+  loadComments();
+});
+
+function loadComments() {
+  let comments = JSON.parse(localStorage.getItem("comments")) || [];
+  commentList.innerHTML = "";
+  comments.forEach(c => {
+    const p = document.createElement("p");
+    p.textContent = c;
+    commentList.appendChild(p);
+  });
+}
+
+loadComments();
 
