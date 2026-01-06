@@ -232,4 +232,29 @@ function updatePost() {
   alert("Post Updated!");
   window.location.href = "index.html";
 }
+const commentInput = document.getElementById("commentInput");
+const commentList = document.getElementById("commentList");
+
+function loadComments() {
+  const comments = JSON.parse(localStorage.getItem("comments")) || [];
+  commentList.innerHTML = "";
+  comments.forEach(comment => {
+    const li = document.createElement("li");
+    li.textContent = comment;
+    commentList.appendChild(li);
+  });
+}
+
+function addComment() {
+  if (commentInput.value === "") return;
+
+  const comments = JSON.parse(localStorage.getItem("comments")) || [];
+  comments.push(commentInput.value);
+  localStorage.setItem("comments", JSON.stringify(comments));
+
+  commentInput.value = "";
+  loadComments();
+}
+
+loadComments();
 
